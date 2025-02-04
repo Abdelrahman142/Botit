@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh '''
                     # Navigate to the Ansible directory
-                    cd weatherapp/ansible
+                    cd ansible
                     # Run the Ansible playbook
                     ansible-playbook -i inventory deploy.yml
                 '''
