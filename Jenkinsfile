@@ -24,5 +24,16 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy with Ansible') {
+            steps {
+                sh '''
+                    # Navigate to the Ansible directory
+                    cd weatherapp/ansible
+                    # Run the Ansible playbook
+                    ansible-playbook -i inventory deploy.yml
+                '''
+            }
+        }
     }
 }
